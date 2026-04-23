@@ -5,7 +5,7 @@ Agent skills for Next.js App Router projects covering frontend standards, backen
 ## Quick Install
 
 ```bash
-npx skills add yourname/next-fullstack-skills
+npx skills add clk-zz/-next-fullstack-skills
 ```
 
 ## Available Skills
@@ -51,12 +51,12 @@ Shared contracts between frontend and backend:
 
 ```bash
 # Install one skill
-npx skills add . --skill next-backend-standards
-npx skills add . --skill next-frontend-standards
-npx skills add . --skill next-fullstack-contracts
+npx skills add clk-zz/-next-fullstack-skills --skill next-backend-standards
+npx skills add clk-zz/-next-fullstack-skills --skill next-frontend-standards
+npx skills add clk-zz/-next-fullstack-skills --skill next-fullstack-contracts
 
 # Or install all skills from this repository
-npx skills add .
+npx skills add clk-zz/-next-fullstack-skills
 ```
 
 ## Usage
