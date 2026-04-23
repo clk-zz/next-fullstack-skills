@@ -2,107 +2,107 @@
 
 Agent skills for Next.js App Router projects covering frontend standards, backend API standards, and fullstack contracts.
 
-## Quick Install
+## What This Repository Provides
 
-```bash
-npx skills add clk-zz/next-fullstack-skills
-```
+This repository contains 3 background skills for building Next.js applications with clearer boundaries between frontend, backend, and shared contracts.
 
-## Available Skills
+- `next-backend-standards`
+  Backend rules for `route.ts`, API design, validation, database access, auth, pagination, and webhooks.
+- `next-frontend-standards`
+  Frontend rules for Server and Client Component boundaries, forms, routing, UI states, and page structure.
+- `next-fullstack-contracts`
+  Shared rules for DTOs, API envelopes, error-code handling, pagination contracts, shared schemas, and cache invalidation.
 
-### `next-backend-standards`
-
-Backend standards for Next.js:
-
-- [API Structure](./skills/next-backend-standards/api-structure.md) - route handler responsibilities and folder layout
-- [Response Shape](./skills/next-backend-standards/response-shape.md) - unified success and error envelopes
-- [Validation](./skills/next-backend-standards/validation.md) - params, query, and body validation with schemas
-- [Error Handling](./skills/next-backend-standards/error-handling.md) - expected vs unexpected failures
-- [Database](./skills/next-backend-standards/database.md) - singleton clients, env safety, runtime choice
-- [Layers](./skills/next-backend-standards/layers.md) - route, service, and repository separation
-- [Auth](./skills/next-backend-standards/auth.md) - authentication and authorization guards
-- [Pagination](./skills/next-backend-standards/pagination.md) - cursor-first list endpoints
-- [Webhooks](./skills/next-backend-standards/webhooks.md) - signature verification and idempotency
-
-### `next-frontend-standards`
-
-Frontend standards for Next.js:
-
-- [Component Boundaries](./skills/next-frontend-standards/component-boundaries.md) - Server vs Client Component rules
-- [Data Fetching](./skills/next-frontend-standards/data-fetching.md) - how pages consume backend data
-- [Forms](./skills/next-frontend-standards/forms.md) - validation, submission, and mutation UX
-- [UI States](./skills/next-frontend-standards/ui-states.md) - loading, empty, error, and success behavior
-- [Routing](./skills/next-frontend-standards/routing.md) - pathname, search params, and filter state
-- [Auth UX](./skills/next-frontend-standards/auth-ux.md) - login state, permission state, and redirects
-- [Structure](./skills/next-frontend-standards/structure.md) - page, section, ui, and hooks organization
-
-### `next-fullstack-contracts`
-
-Shared contracts between frontend and backend:
-
-- [DTO Shape](./skills/next-fullstack-contracts/dto-shape.md) - resource and view-model boundaries
-- [Error Contracts](./skills/next-fullstack-contracts/error-contracts.md) - error code handling and UI mapping
-- [Pagination Contracts](./skills/next-fullstack-contracts/pagination-contracts.md) - request and response consistency
-- [Shared Schemas](./skills/next-fullstack-contracts/shared-schemas.md) - zod reuse and boundary rules
-- [Client Consumption](./skills/next-fullstack-contracts/client-consumption.md) - how frontend should consume API envelopes
-- [Cache Invalidation](./skills/next-fullstack-contracts/cache-invalidation.md) - revalidate and refresh coordination
+After installation, these skills are meant to work like background standards. The model should match them automatically based on whether the task is mainly backend, frontend, or cross-layer integration.
 
 ## Installation
 
-```bash
-# Install one skill
-npx skills add clk-zz/next-fullstack-skills --skill next-backend-standards
-npx skills add clk-zz/next-fullstack-skills --skill next-frontend-standards
-npx skills add clk-zz/next-fullstack-skills --skill next-fullstack-contracts
+Install all skills:
 
-# Or install all skills from this repository
+```bash
 npx skills add clk-zz/next-fullstack-skills
 ```
 
-## Usage
+Install a single skill:
 
-Use `next-backend-standards` when you need to:
+```bash
+npx skills add clk-zz/next-fullstack-skills --skill next-backend-standards
+npx skills add clk-zz/next-fullstack-skills --skill next-frontend-standards
+npx skills add clk-zz/next-fullstack-skills --skill next-fullstack-contracts
+```
 
-- Build `app/api/**/route.ts` endpoints
-- Add database access in Next.js
-- Standardize response envelopes and error handling
-- Introduce request validation and auth guards
-- Review backend code for structure and consistency
+List available skills before installing:
 
-Use `next-frontend-standards` when you need to:
+```bash
+npx skills add clk-zz/next-fullstack-skills --list
+```
 
-- Build pages, forms, and list views in App Router
-- Decide between Server and Client Components
-- Standardize loading, error, empty, and permission states
-- Keep filter and pagination state in the URL
-- Review page and component organization
+## How To Use
 
-Use `next-fullstack-contracts` when you need to:
+You do not need to manually invoke these skills in normal use. Once installed, the model should select the right skill from your request:
 
-- Define shared request and response contracts
-- Keep frontend DTO usage aligned with backend envelopes
-- Reuse schemas safely across UI and API layers
-- Standardize error-code-driven UI handling
-- Coordinate pagination and cache invalidation behavior
+- If the task is about writing APIs, `route.ts`, database logic, auth, or webhooks, it should use `next-backend-standards`.
+- If the task is about pages, forms, lists, filters, loading states, or interactive UI, it should use `next-frontend-standards`.
+- If the task spans both frontend and backend, such as DTOs, unified response handling, pagination contracts, or integration flows, it should use `next-fullstack-contracts`.
 
-These three skills are intended to behave like background skills:
+Example requests:
 
-- `next-backend-standards` should auto-match backend requests such as writing `route.ts`, connecting a database, adding auth guards, or standardizing API responses.
-- `next-frontend-standards` should auto-match frontend requests such as building pages, forms, filters, dashboards, loading states, or interactive UI.
-- `next-fullstack-contracts` should auto-match cross-layer requests such as frontend/backend integration, DTO design, shared schemas, unified pagination, or error-code-to-UI mapping.
+- "Write a user API with validation and Prisma integration."
+- "Build a dashboard page with filters, loading states, and pagination."
+- "Standardize backend responses and make the frontend handle errors and pagination consistently."
 
-The trigger signal mainly comes from each `SKILL.md` frontmatter `description`, and all three skills are marked with `user-invocable: false` so they behave more like automatically applied standards than manual slash-command skills.
+## Included Skills
 
-## Contributing
+### `next-backend-standards`
 
-Each skill follows the same pattern as `vercel-labs/next-skills`:
+Entry file: [skills/next-backend-standards/SKILL.md](./skills/next-backend-standards/SKILL.md)
 
-1. Create a directory under `skills/` with the skill name (prefix with `next-`)
-2. Add a `SKILL.md` file with YAML frontmatter:
-   ```yaml
-   ---
-   name: next-skill-name
-   description: Brief description
-   ---
-   ```
-3. For complex skills, add additional `.md` files and reference them from `SKILL.md`
+Covers:
+
+- Route handler structure
+- Unified success and error responses
+- Request validation
+- Error handling
+- Database client rules
+- Service and repository layering
+- Auth and authorization
+- Pagination
+- Webhook handling
+
+### `next-frontend-standards`
+
+Entry file: [skills/next-frontend-standards/SKILL.md](./skills/next-frontend-standards/SKILL.md)
+
+Covers:
+
+- Server and Client Component boundaries
+- Page-level data fetching
+- Forms and mutation UX
+- Loading, empty, error, and success states
+- URL-driven filters and routing
+- Auth-related page behavior
+- Frontend file and component structure
+
+### `next-fullstack-contracts`
+
+Entry file: [skills/next-fullstack-contracts/SKILL.md](./skills/next-fullstack-contracts/SKILL.md)
+
+Covers:
+
+- DTO shape
+- Shared request and response contracts
+- Error-code-driven UI behavior
+- Pagination request and response shape
+- Shared schemas
+- API client consumption rules
+- Cache invalidation coordination
+
+## Recommended Use Cases
+
+Use this repository if you want to:
+
+- Keep Next.js frontend and backend responsibilities separate
+- Standardize API response shape and validation rules
+- Make frontend pages consume backend data more consistently
+- Reduce ad hoc contract design between UI and API layers
+- Reuse one set of engineering rules across multiple Next.js projects
