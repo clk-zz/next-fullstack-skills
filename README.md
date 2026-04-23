@@ -1,8 +1,8 @@
 # Next Fullstack Skills
 
-Agent skills for Next.js App Router projects covering frontend standards, backend API standards, and fullstack contracts.
+[English](./README.md) | [中文](./README.zh-CN.md)
 
-Chinese guide: [README.zh-CN.md](./README.zh-CN.md)
+Agent skills for Next.js App Router projects covering frontend standards, backend API standards, and fullstack contracts.
 
 ## What This Repository Provides
 

@@ -1,5 +1,7 @@
 # Next Fullstack Skills 中文使用指南
 
+[English](./README.md) | [中文](./README.zh-CN.md)
+
 适用于 Next.js App Router 项目的 Agent Skills 集合，覆盖前端规范、后端接口规范，以及前后端联调契约规范。
 
 ## 仓库提供什么
