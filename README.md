@@ -2,6 +2,8 @@
 
 Agent skills for Next.js App Router projects covering frontend standards, backend API standards, and fullstack contracts.
 
+Chinese guide: [README.zh-CN.md](./README.zh-CN.md)
+
 ## What This Repository Provides
 
 This repository contains 3 background skills for building Next.js applications with clearer boundaries between frontend, backend, and shared contracts.
